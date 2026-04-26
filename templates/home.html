@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FWI Prediction</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 0;">
+
+    <div style="max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+        <h1 style="text-align: center; color: #333;">FWI Prediction</h1>
+
+        <form action="{{url_for('predict_datapoint')}}" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+
+            <input type="text" name="Temperature" placeholder="Temperature" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="RH" placeholder="RH" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="Ws" placeholder="Ws" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="Rain" placeholder="Rain" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="FFMC" placeholder="FFMC" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="DMC" placeholder="DMC" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="ISI" placeholder="ISI" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="Classes" placeholder="Classes" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            
+            <input type="text" name="Region" placeholder="Region" required="required" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+
+            <button type="submit" style="padding: 12px; background: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                Predict
+            </button>
+        </form>
+
+        <div style="margin-top: 25px; padding: 15px; background: #e9f7ef; border-radius: 5px; text-align: center; font-size: 18px; color: #2e7d32;">
+            {{results}}
+        </div>
+
+    </div>
+
+</body>
+</html>
